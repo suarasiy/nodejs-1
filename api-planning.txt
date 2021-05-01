@@ -1,0 +1,43 @@
+Standar API
+
+Memiliki versi untuk API kita adalah cara terbaik, jika kasus seperti response-nya berubah atau post-nya berubah.
+{ root.api }/{ version }/{ grouping }/{ endpoint }
+{ contoh-api.com }/ { v1 }
+
+SAMPLE:
+http://mern-api.kabayancoding.com/v1/auth/login
+
+GROUP : Authentication
+[1] - Register
+{ root.api }/{ version }/auth/register
+
+req:
+{
+  "name": "",
+  "email": "",
+  "password": "",
+}
+
+res:
+{
+  "message": "Register success",
+  "data": {
+    "id": 1,
+    "name": "Testing",
+    "email": "test@gmail.com",
+    "password": "123123123"
+  }
+}
+
+[2] - Login
+{ root.api }/{ version }/auth/login
+req:
+{
+
+}
+
+GROUP : BLOG
+[1] - Create blog post
+[2] - Get blog post
+[3] - Update blog post
+[4] - Delete blog post
