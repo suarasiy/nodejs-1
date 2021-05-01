@@ -7,7 +7,18 @@ Memiliki versi untuk API kita adalah cara terbaik, jika kasus seperti response-n
 SAMPLE:
 http://mern-api.kabayancoding.com/v1/auth/login
 
-GROUP : Authentication
+Standar Status response
+# NOTE: Standar Status Response
+200 - OK                        -> Call API Success
+201 - CREATED                   -> Post Success
+400 - BAD REQUEST               -> Error in Client Side (Bisa input yang salah, dll)
+401 - UNAUTHORIZED              -> User not authorized to the REQUEST
+403 - FORBIDDEN                 -> User not allowed to access
+404 - NOT FOUND                 -> Request Endpoint not found
+500 - INTERNAL SERVER ERROR     -> Error on server Side
+502 - BAD GATEWAY               -> Invalid response from another request
+
+# 1. GROUP: Authentication
 [1] - Register
 { root.api }/{ version }/auth/register
 
@@ -29,14 +40,17 @@ res:
   }
 }
 
+err-response:
+400 -> input yang anda masukkan tidak valid
+
 [2] - Login
 { root.api }/{ version }/auth/login
 req:
 {
-
+  ""
 }
 
-GROUP : BLOG
+# 2. GROUP: BLOG
 [1] - Create blog post
 [2] - Get blog post
 [3] - Update blog post
